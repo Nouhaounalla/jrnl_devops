@@ -2,9 +2,9 @@ name: CI/CD Pipeline jrnl
 
 on:
   push:
-    branches: [develop, main]
+    branches: [main]
   pull_request:
-    branches: [develop, main]
+    branches: [main]
 
 jobs:
   test:
@@ -21,8 +21,8 @@ jobs:
       
       - name: Install Poetry
         run: |
-          pip install poetry
-          poetry --version
+          py -3.11 -m pip install poetry
+          py -m poetry --version
       
       - name: Install dependencies
         run: |
